@@ -2,9 +2,7 @@ import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import LandingPage from "../Pages/landing";
 import ExplorePage from "../Pages/explore";
-import PrivateRouter from "./privateRouter";
 import Profile from "../Pages/profile";
-import YourTrip from "../Pages/yourTrip";
 
 const Routing = () => {
   return (
@@ -21,9 +19,6 @@ const Routing = () => {
 
         <Route path="/explore" element={<ExplorePage />} />
 
-        <Route path="/your-trip" element={<PrivateRouter />}>
-          <Route index element={<YourTrip />} />
-        </Route>
 
 
       </Routes>

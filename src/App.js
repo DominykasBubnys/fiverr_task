@@ -4,7 +4,6 @@ import {AuthContext} from "./contextAPI/AuthContext";
 import { useState, useCallback } from 'react'
 import MainNavigation from "./components/navigation";
 import { ToastContainer } from 'react-toastify';
-import Location from './components/shared/UI/map/location';
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import { useEffect } from 'react';
 import Ripple from './components/shared/UI/ripple';

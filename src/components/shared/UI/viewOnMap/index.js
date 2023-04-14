@@ -1,14 +1,11 @@
 import React from 'react'
 import Modal from '../Modal'
 import AlertContainer from './alertContainer'
-import Location from '../map/location'
 import { useState } from 'react'
 import MapContent from './mapContent'
 
 
 const ViewOnMap = (props) => {
-
-  console.log("propsaaaaaay: ", props)
 
   const [showMap, setShowMap] = useState(false);
 

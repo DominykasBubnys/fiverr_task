@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./mapContent.module.css"
 import generalStyles from "./alertContainer.module.css";
-import Location from '../../../../components/shared/UI/map/location';
+// import Location from '../../../../components/shared/UI/map/location';
 import { useContext, useEffect, useState } from 'react';
 import {AuthContext} from "../../../../contextAPI/AuthContext"
 import StarRating from "../../../../components/shared/UI/Ratings/stars";
@@ -10,7 +10,6 @@ import Button from '../button/Button';
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import Modal from '../Modal';
 import Loader from './Loader';
-import { MapLoader } from './Loader/MapLoader';
 
 
 
@@ -34,8 +33,8 @@ const MapContent = (props) => {
     if(showLoader){
       const timeoutId = setTimeout(() => {
         setShowLoader(false);
-      }, 1000);
-      handle.enter();
+      }, 30000);
+      setShowModal(false)
 
     }
 
@@ -70,21 +69,14 @@ const MapContent = (props) => {
             show={showModal}
             onClose={() => {setShowModal(false)}}
           >
-              <FullScreen handle={handle}>
-                <>
-                  { showLoader &&
-                    <div className={styles.loading__}>
-                      <Loader />
-                      {/* <MapLoader/> */}
-                    </div>
-                  }
-                  
-                  <Location 
-                    onClose={() => {setShowMaps(false); setShowModal(false)}} 
-                    show_location={props.show_location}
-                  />
-                </>
-              </FullScreen>
+            <>
+              { showLoader &&
+                <div className={styles.loading__}>
+                  <Loader />
+                </div>
+              }
+              {/* showing maps */}
+            </>
           </Modal>
         }
         
